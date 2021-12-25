@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./birthdayCake.png" />
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../slide_image/style.css">
+
+    <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        window.open = function () {};
+        window.print = function () {};
+        // Support hover state for mobile.
+        if (false) {
+            window.ontouchstart = function () {};
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="pyro">
+        <div class="before">
+
+        </div>
+        <div class="after">
+
+        </div>
+        <div class="container">
+            <!-- 2. Dòng chữ Happy Birthday
+                Nếu bạn muốn thêm chữ vào thì phải thay đổi css tương ứng cho nó -->
+            <div class="balloon">
+                <div><span>H</span></div>
+                <div><span>A</span></div>
+                <div><span>P</span></div>
+                <div><span>P</span></div>
+                <div><span>Y</span></div>
+                <div><span>B</span></div>
+                <div><span>I</span></div>
+                <div><span>R</span></div>
+                <div><span>T</span></div>
+                <div><span>H</span></div>
+                <div><span>D</span></div>
+                <div><span>A</span></div>
+                <div><span>Y</span></div>
+            </div>
+
+            <!-- Slide image -->
+
+            <div id="drag-container">
+                <div id="spin-container">
+                    <!-- Add your images (or video) here -->
+                    <img src="../images/slide1.jpg" alt="">
+                    <img src="../images/slide2.jpg" alt="">
+                    <img src="../images/slide3.jpg" alt="">
+                    <img src="../images/slide4.jpg" alt="">
+                    <img src="../images/slide5.jpeg" alt="">
+                    <img src="../images/slide6.jpeg" alt="">
+                    <img src="../images/slide7.jpg" alt="">
+
+                    <!-- Text at center of ground -->
+                    <p>HappyBirthDay To You</p>
+                </div>
+                <div id="ground"></div>
+            </div>
+
+            <!-- <div id="music-container"></div> -->
+
+            <!-- End image slide -->
+
+
+
+
+
+            <div class="avatar">
+
+                <!-- 3. Avatar của người bạn muốn gởi lời chúc -->
+                <img src="../images/tranh-banh-sinh.png" alt="" class="avatar__img" onclick="showMessage()" />
+                <!-- 4. Tên của người đó -->
+                <h1 onclick="showMessage()" class="avatar__title">Khánh Linh</h1>
+            </div>
+
+            <div class="btn">
+                <div class="btn-left">
+                    <i class="fas fa-gift"></i>
+                    <a href="../gift_box/index.html">Quà tặng</a>
+                </div>
+                <div class="btn-right">
+                    <i class="fas fa-comment-dots"></i>
+                    <a href="#" onclick="showMessage()">Lời nhắn</a>
+                </div>
+            </div>
+
+            <!-- 5. Phần nhạc -->
+            <audio id="player" autoplay loop">
+                <source src="./music.mp3">
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+
+        function showMessage() {
+            // 6. Lời nhắn hiện ra khi bấm vào tên hoặc avatar
+            swal({
+                title: "Lời nhắn", // Tiêu đề của popup
+                text: "Gửi đến Bẹp, chúc Bẹp sinh nhật thật là vui vẻ, luôn luôn hạnh phúc, mãi xinh đẹp, nhan sắc ngày càng thăng hoa ^.^ .Chúc Bẹp luôn gặt hái được nhiều thành công trong sống và các chặng đường phía trước.Chúc Bẹp tất cả! Happy Birth Day To You ❤️", // Nội dung lời nhắn
+                button: {
+                    text: "❤️️",
+                },
+            });
+        }
+    </script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../slide_image/common.js"></script>
+</body>
+
+</html>
