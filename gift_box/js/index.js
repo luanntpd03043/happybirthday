@@ -296,7 +296,7 @@ function reveal() {
   }
 
   var ifrm = document.createElement("iframe");
-  ifrm.setAttribute("src", "../../video/1635406682204.mp4");
+  ifrm.setAttribute("src", "../video/1635406682204.mp4");
   //ifrm.style.width = `${w}px`;
   //ifrm.style.height = `${h}px`;
   ifrm.style.border = 'none';
